@@ -1,13 +1,19 @@
 from django.views.generic import FormView
 from forms import WakeOnLan
+from scripts import SSHManager
 
 
 # Create your views here.
-class WakeOnLanView(FormView):
+class WakeOnLanView(FormView, SSHManager):
     form_class = WakeOnLan
     template_name = 'wakeonlan.html'
     success_url = '/'
+    s = SSHManager()
 
     def form_valid(self, form):
-        print form.cleaned_data
+        data = form.cleaned_data
+        get_cp = data.get('computer_name')
+        print get_cp
+        #self.ssh_rem_comand(get_cp)
+        self.s.ssh_rem_comand(get_cp)
         return super(WakeOnLanView, self).form_valid(form)
