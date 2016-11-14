@@ -1,0 +1,7 @@
+You need copy all files from this directory to system which has access to all segments with broadcast.
+And configure this scripts also you can place this script localy and use 127.0.0.1.
+Don't forget configure with djngo server and script-host add ssh via authority keys.
+scp -R * host@user:/place
+#scheme
+user(webapp) -> djnago-server -> wakeonlan-server-> send all network computers
+change path configFilePath in c_config_parce.py
