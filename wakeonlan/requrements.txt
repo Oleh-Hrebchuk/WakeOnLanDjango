@@ -1,0 +1,5 @@
+paramiko
+python-nmap
+ast
+sqlite3
+netifaces
