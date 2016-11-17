@@ -1,5 +1,5 @@
-paramiko
-python-nmap
-ast
-sqlite3
-netifaces
+#on django server install python-paramiko
+django-bootstrap3
+django
+virtualenv
+#apt-get install python-paramiko
