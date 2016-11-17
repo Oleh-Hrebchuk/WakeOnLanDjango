@@ -1,4 +1,4 @@
-Host django 192.168.0.1
+#Host django 192.168.0.1
 sudo apt-get update
 apt-get install python-pip apache2 libapache2-mod-wsgi
 pip install virtualenv
@@ -51,7 +51,7 @@ ssh_user = djangouser
 place_wakeonlan = /opt/wakeonlandjango/c_wake_on_lan.py
 
 
-Host with wakeonlan 192.168.0.2
+#Host with wakeonlan 192.168.0.2
 mkdir /opt/wakeonlandjango
 copy all files from remote_files to /opt/wakeonlandjango
 apt-get install sqlite3
