@@ -11,7 +11,7 @@ pip install django
 pip install django-bootstrap3
 apt-get install python-paramiko
 ```
-###Configure apache
+###Configure apache.
 ```
 nano /opt/wakeonlan_service/wakeonlan/settings.py
 DEBUG = False
@@ -23,7 +23,7 @@ STATIC_ROOT = os.path.join("/opt/wakeonlan_service/static")
 nano /opt/wakeonlan_service/wakeonlanapp/scripts.py
 configFilePath = r'/opt/wakeonlan_service/wakeonlanapp/wakeonlan.conf'
 ```
-###save it
+###Save it.
 ```
 ./manage.py makemigrations
 ./manage.py migrate
@@ -51,7 +51,7 @@ Require all granted
 </Directory>
 </VirtualHost>
 ```
-###save it.
+###Save it.
 ```
 chown :www-data /opt/wakeonlan_service
 nano /opt/wakeonlan_service/wakeonlanapp/wakeonlan.conf
@@ -84,12 +84,12 @@ tables_gates = gates
 [nmap]
 range_network = 192.26.1.0/24, 192.5.2.0/24
 ```
-###save it
+###Save it.
 ```
 nano /opt/wakeonlandjango/c_config_parce.py
 configFilePath = r'/opt/wakeonlandjango/wakeonlan.conf'
 ```
-###run configurations
+###Run first configurations.
 ```
 /opt/wakeonlandjango/a_first_configuration.py 
 /opt/wakeonlandjango/a_update_database_data.py
