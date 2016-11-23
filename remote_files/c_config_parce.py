@@ -1,3 +1,4 @@
+#!/usr/bin/pythony
 import ConfigParser
 import ast
 __author__ = 'oleh.hrebchuk'

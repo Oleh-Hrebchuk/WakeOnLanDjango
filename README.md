@@ -17,6 +17,11 @@ nano /opt/wakeonlan_service/wakeonlan/settings.py
 DEBUG = False
 ALLOWED_HOSTS = [‘ip-host’]
 STATIC_ROOT = os.path.join("/opt/wakeonlan_service/static")
+
+#commend lines bellow
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 ```
 ###Save it.
 ```
@@ -67,7 +72,8 @@ mkdir /opt/wakeonlandjango
 copy all files from remote_files to /opt/wakeonlandjango
 apt-get install sqlite3
 apt-get install python-pip
-pip install nmap
+apt-get install nmap
+pip install python-nmap
 pip install netifaces
 apt-get install python-paramiko
 ```

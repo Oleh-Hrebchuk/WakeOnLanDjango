@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import os
 from b_database_manager import *
 from c_config_parce import GetConfig
