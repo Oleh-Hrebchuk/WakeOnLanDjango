@@ -1,6 +1,8 @@
+#!/usr/bin/python
 import sqlite3
 import nmap
 import logging
+import paramiko
 from c_network import NetworkInformation
 from c_patterns import Patterns
 from c_config_parce import GetConfig
@@ -12,6 +14,7 @@ class ScannCopmputers(GetConfig):
         detail_hosts = {}
         nm = nmap.PortScanner()
         scann = nm.scan(hosts=network, arguments='-sP')
+        print scann
         try:
             for key in scann['scan'].keys():
                 if 'VMware' not in scann['scan'][key]['vendor'].values():

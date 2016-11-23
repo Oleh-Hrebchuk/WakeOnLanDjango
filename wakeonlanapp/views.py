@@ -15,3 +15,4 @@ class WakeOnLanView(FormView, SSHManager):
         get_cp = data.get('computer_name')
         self.s.ssh_rem_comand(get_cp)
         return super(WakeOnLanView, self).form_valid(form)
+

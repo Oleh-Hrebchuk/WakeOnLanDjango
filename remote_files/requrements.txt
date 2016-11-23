@@ -1,6 +1,0 @@
-paramiko
-nmap
-netifaces
-#apt-get install sqlite3
-#apt-get install python-pip
-#apt-get install python-paramiko

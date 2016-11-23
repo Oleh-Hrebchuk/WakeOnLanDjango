@@ -1,5 +1,3 @@
-#on django server install python-paramiko
 django-bootstrap3
 django
 virtualenv
-#apt-get install python-paramiko

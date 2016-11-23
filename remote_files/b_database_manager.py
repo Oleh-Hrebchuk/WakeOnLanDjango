@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import sqlite3
 from b_get_computer_info import ScannCopmputers
 from c_network import NetworkInformation
