@@ -95,6 +95,11 @@ class ManageHostsTable(ManageDB, ScannCopmputers):
                         self.loger(e, 'error')
                         continue
 
+    def get_mac_all_subnet(self, key):
+        cur = self.db_connect().cursor()
+        return cur.execute("SELECT ip,mac FROM hosts WHERE ip LIKE '{}%'".format(key)).fetchall()
+
+
 class ManageGatesTable(ManageDB, NetworkInformation):
     def insert_data(self, eth, broadcast, addr):
         con = self.db_connect()

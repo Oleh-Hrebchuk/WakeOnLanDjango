@@ -1,9 +1,10 @@
 #!/usr/bin/python
 import os
 import netifaces
+from c_logging import LoggingData
 
 
-class NetworkInformation(object):
+class NetworkInformation(LoggingData):
     def get_net_add(self):
         get_netifc = netifaces.interfaces()
         list_net_detail = []
@@ -18,7 +19,7 @@ class NetworkInformation(object):
 
             return list_net_detail
         except Exception, e:
-            self.write_log(e, '/var/log/openvpn-errors.log')
+            self.loger(e, 'error')
             pass
 
     def get_broadcast(self, host):
@@ -44,3 +45,6 @@ class NetworkInformation(object):
             return 0
         else:
             return 1
+
+    def get_first_octet(self, slice):
+        return slice[:-4]

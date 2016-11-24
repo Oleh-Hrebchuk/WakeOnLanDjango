@@ -9,3 +9,11 @@ class Patterns(object):
             return [0 <= int(x) < 256 for x in re.split('\.', pattern.match(data).group())].count(True) == 4
         except:
             return False
+
+    def regex_subnet(self, data):
+        pattern = re.compile(r"^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/24$")
+        try:
+            if pattern.match(data).group():
+                return True
+        except:
+            return False
