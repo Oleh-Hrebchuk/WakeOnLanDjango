@@ -36,7 +36,15 @@ class Manager(Patterns, WakeOnLan, ManageGatesTable, ManageHostsTable, GetConfig
                 self.macaddress = self.get_mac_via_ip(get_host)
                 self.broadcast = self.get_broadcast(get_host)
                 self.eth = self.g.get_eth_via_brod(self.get_broadcast(get_host))[0][0]
-                self.wake_on_lan()
+                return self.wake_on_lan()
+            elif self.regex_subnet(get_host):
+                get_first_octet = self.get_first_octet(get_host)
+                get_all_computers = self.get_mac_all_subnet(get_first_octet)
+                for host in get_all_computers:
+                    self.macaddress = host[1]
+                    self.broadcast = self.get_broadcast(host[0])
+                    self.eth = self.g.get_eth_via_brod(self.get_broadcast(host[0]))[0][0]
+                    self.wake_on_lan()
             else:
                 if self.host.endswith(self.domain):
                     self.macaddress = self.get_mac_via_hostname(get_host.lower())[0][0]
