@@ -59,7 +59,9 @@ Require all granted
 </Directory>
 </VirtualHost>
 ```
-###add permisions
+###Press CTRL+X and save changes.
+
+###Add permisions.
 ```
 chown :www-data /opt/wakeonlan_service
 ```
@@ -72,6 +74,8 @@ ssh_host = 192.168.0.2
 ssh_user = djangouser
 place_wakeonlan = /opt/wakeonlandjango/c_wake_on_lan.py
 ```
+###Press CTRL+X and save changes.
+
 ###Restart apache service
 ```
 /etc/init.d/apache2 restart
@@ -103,11 +107,15 @@ tables_gates = gates
 [nmap]
 range_network = 192.26.1.0/24, 192.5.2.0/24
 ```
+###Press CTRL+X and save changes.
+
 ###Add path to config in file c_config_parce.py.
 ```
 nano /opt/wakeonlandjango/c_config_parce.py
 configFilePath = r'/opt/wakeonlandjango/wakeonlan.conf'
 ```
+###Press CTRL+X and save changes.
+
 ###Run first configurations.
 ```
 /opt/wakeonlandjango/a_first_configuration.py 
@@ -118,3 +126,4 @@ configFilePath = r'/opt/wakeonlandjango/wakeonlan.conf'
 crontab -e
 * 12 * * * /opt/wakeonlandjango/a_update_database_data.py >> /dev/null 2>&1
 ```
+###Press CTRL+X and save changes.
